@@ -2,9 +2,10 @@
 import os
 # exibe a lista original
 
-os.system("cls" if os.name == "nt" else "clear" )
+
 
 # lista 
+
 nomes = ["Naruto", "Hinata", "Sakura", "Shikamaru" "Sasuke", "Madara", "Obito",]
 
 
@@ -29,15 +30,10 @@ while True:
             indice = int(input("Informe o indicce a ser açterado: "))
             # informa novo valor
             nomesindice = input ("Informe novo nome:  ").strip().title()
-            os.sytem("cls" if os.name == "nt" else "Clear")
             print("Item da lista alerado com sucesso!")
             continue    
 
         case "2":
-            os.sytstem("cls" if os.name == "nt" else "clear")
-
-                # exibe a nova lista
-
             for n. nome in enumerate(nomes):
                     print(f"indicae {n: {nome}}")
                     break
