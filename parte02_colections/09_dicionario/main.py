@@ -1,19 +1,18 @@
-# dicionario
 
+# Dicionário
 usuario = {
-    'nome': "Alex Machado",
-    'idade': 41,
-    'altura': 1.72,
-    'email': "alex@gmail.com",
-    'cpf': "123.456.789-12",
-    'telefone': "(61) 98765-4321"
-
+    'nome': "Ekure",
+    'idade': 23,
+    'altura': 1.80,
+    'email': "ekure@gmail.com",
+    'cpf': "123.456.789.10",
+    'telefone': "(61) 940028922"
 }
 
-# exibe valor especifico
+# Exibir um valor específico
 print(f"Nome: {usuario['nome']}")
-print(f"Email: {usuario.get('email')}")
+print(f"E-mail: {usuario.get('email')}")
 
-# percorre o dicionario
+# Com laço de repetição
 for chave, valor in usuario.items():
     print(f"{chave.capitalize()}: {valor}.")

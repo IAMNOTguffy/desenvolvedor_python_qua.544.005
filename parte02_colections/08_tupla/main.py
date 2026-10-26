@@ -1,5 +1,4 @@
  # tupula
-
 dias_da_semana = (
     "Domingo",
     "Segunda-Feira",
@@ -7,20 +6,19 @@ dias_da_semana = (
     "Quarta-Feira",
     "Quinta-Feira",
     "Sexta-Feira",
-    "Sábado",
-
+    "Sábado"
 )
 
+# Exibe a tupla
 for dia in dias_da_semana:
     print(dia)
 
-    # NOTE: se tentar alterar a tupla, o programa dá erro. Exemplo
-
-    try:
-        dias_da_semana.sorte()
-        for dia in dias_da_semana:
-            print(dia)
-    except Exception as e:
-        print(f"Não foi possíve ordenar. {e}.")
-    finally:
-        print("Programa encerrado.")
+# NOTE: se tentar alterar a tupla, o programa dá erro. Exemplo
+try:    
+    dias_da_semana.sort()
+    for dia in dias_da_semana:
+        print(dia)
+except Exception as e:
+    print(f"Não foi possível ordenar. {e}. ")
+finally:
+    print("Programa encerrado.")

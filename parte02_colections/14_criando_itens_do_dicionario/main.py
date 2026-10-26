@@ -1,51 +1,50 @@
-# biblioteca
-
+# Biblioteca 
 import os
 
-
-
-# lista de usuarios vazia
-
+# lista de usuários vazia
 usuarios = []
 
-
-# limpa terminal 
-
+# limpa o terminal
 os.system("cls" if os.name == "nt" else "clear")
 
-# loop
+# loop (inserir quantas vezes quiser)
 while True:
     # menu
-    print("1 - Cadastrar Usuario")
-    print("2 - Exibir a lista de usuarios")
+    print("1 - Cadastrar novo usuário")
+    print("2 - Exibir lista de usuários")
     print("3 - Sair do programa")
-    opcao = input("Opção desejada> ").strip()
+    opcao = input("Opção desejada: ").strip()
+
+    os.system("cls" if os.name == "nt" else "clear")
+
     # verifica opção escolhida
-    match opcao: 
+    match opcao:
         case "1":
-            # cria novo dicionario
+            # cria novo dicionário
             usuario = {}
 
-            # inserir os dados do usaurio
+            # insere os dados no dicionário
             usuario['nome'] = input("Informe o nome: ").strip().title()
             usuario['idade'] = int(input("Informe a idade: "))
-            usuario['email'] = input("Informe o seu email: ").strip().lower()
+            usuario['email'] = input("Informe o e-mail: ").strip().lower()
             usuario['cpf'] = input("Informe o CPF: ").strip()
 
-            # adiciona o usuario na lista
-            usuario.append(usuario)
+            # adiciona o usuário na lista
+            usuarios.append(usuario)
 
-            # usuario cadastrado com sucesso!!
-            print(f"{usuario.get('nome')} cadastrado com sucesso!!")
+            # mensagem de sucesso
+            print(f"{usuario.get('nome')} cadastrado com sucesso")
             continue
-        
         case "2":
+            # exibe a lista de usuários
             for usuario in usuarios:
                 for chave, valor in usuario.items():
                     print(f"{chave.capitalize()}: {valor}")
-                    print(f"{'-'*40}")
-                    continue
+                print(f"{'-'*40}")
+                
+            continue
         case "3":
             break
         case _:
-           pass
+            print("Opção inválida.")
+            continue
