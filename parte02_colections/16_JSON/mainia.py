@@ -91,9 +91,7 @@ while True:
                 print(f"CPF: {usuario['cpf']}")
 
             # Busca pelo CPF
-            cpfbuscar = input(
-                "Digite o CPF do usuário que deseja alterar: "
-            ).strip()
+            cpfbuscar = input("Digite o CPF do usuário que deseja alterar: ").strip()
 
             for usuario in usuarios:
                 if usuario["cpf"] == cpfbuscar:
@@ -102,15 +100,10 @@ while True:
                     for chave, valor in usuario.items():
                         print(f"{chave.capitalize()}: {valor}")
 
-                    chave_escolhida = input(
-                        "\nQual dado deseja alterar? "
-                        "(nome, idade, email, cpf, telefone): "
-                    ).strip().lower()
+                    chave_escolhida = input("\nQual dado deseja alterar? ""(nome, idade, email, cpf, telefone): ").strip().lower()
 
                     if chave_escolhida in usuario:
-                        novo_valor = input(
-                            "Informe o novo valor: "
-                        ).strip()
+                        novo_valor = input("Informe o novo valor: ").strip()
 
                         if chave_escolhida == "idade":
                             try:
@@ -155,8 +148,7 @@ while True:
 
             # Busca o CPF
             buscar = input(
-                "\nDigite o CPF do usuário que deseja excluir: "
-            ).strip()
+                "\nDigite o CPF do usuário que deseja excluir: ").strip()
 
             for usuario in usuarios:
                 if usuario["cpf"] == buscar:
@@ -174,12 +166,7 @@ while True:
 
             try:
                 with open("usuarios.json", "w", encoding="utf-8") as arquivo:
-                    json.dump(
-                        usuarios,
-                        arquivo,
-                        ensure_ascii=False,
-                        indent=4
-                    )
+                    json.dump(usuarios,arquivo,ensure_ascii=False,indent=4)
 
                 print("Dados gravados com sucesso!")
 
