@@ -28,6 +28,7 @@ class Pessoa:
 class Conta(IConta):
     agencia: str
     n_conta: str    
+    tipo_conta: str
     saldo: float
     titular: Pessoa
 
@@ -41,7 +42,12 @@ class Conta(IConta):
         print("Conta destruída com sucesso!")
 
     def consultar(self):
-        print(self)
+        print("Titular da conta: ")
+        print(self.titular)
+        print(f"Agência: {self.agencia}")
+        print(f"Número da conta: {self.n_conta}")
+        print(f"Saldo: $ {self.saldo:.2f}")
+        print(f"Tipo de conta: {self.tipo_conta}")
 
     def depositor(self, valor):
         self.saldo += valor
@@ -56,13 +62,14 @@ class ContaCorrente(Conta):
     taxa: float
 
     def sacar(self,valor):
-        valor +=0.01
+        self.saldo -= self.taxa
         return super().sacar(valor)
 
 @dataclass
 class ContaPoupanca(Conta):
     juros: float
 
-    def depositor(self, valor, juros):
-        valor += juros
+    def depositor(self, valor):
+        self.saldo += self.saldo*(self.juros/100)
+        return super().depositar(valor)
 
